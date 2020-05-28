@@ -1,0 +1,49 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /*1rem = 10px*/
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+/* Esto de arriba es un snippet para evitar bordes conflictivos. */
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.6rem;
+    line-height: 2;
+}
+
+/** GLOBALES **/
+.contenedor {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'PT Sans', sans-serif;
+}
+
+h1 {
+    font-size: 3rem;
+}
+h2{
+    font-size: 2.5rem;
+}
+h3 {
+    font-size: 2rem;
+}
+h4 {
+    font-size: 1.5rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* UTILIDADES */
+.centrar-texto {
+    text-align: center;
+}
+
+
+
