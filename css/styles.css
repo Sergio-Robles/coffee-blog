@@ -15,7 +15,7 @@ body {
 
 /** GLOBALES **/
 .contenedor {
-    max-width: 900px;
+    max-width: 1100px;
     width: 95%;
     margin: 0 auto;
 }
@@ -36,9 +36,12 @@ h3 {
 h4 {
     font-size: 1.5rem;
 }
+p {
+    font-size: 1.3rem;
+}
 
 img {
-    max-width: 100%;
+    max-width: 90%;
 }
 
 /* UTILIDADES */
@@ -48,6 +51,68 @@ img {
 .no-margin {
     margin: 0;
 }
+
+/*Grid*/
+@media (min-width: 768px) {
+    .grid{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .centrar-columnas{
+        justify-content: center;
+    }
+    .columnas-4{
+        flex: 0 0 calc(33.3% - 1.5rem);
+    }
+    .columnas-6{
+        flex: 0 0 calc(50% - 1.5rem);
+    }
+    .columnas-8{
+        flex: 0 0 calc(66.6% - 1.5rem);
+    }
+    .columnas-10{
+        flex: 0 0 calc(83.3% - 1.5rem);
+    }
+    .columnas-12 {
+        flex: 0 0 100%;
+    }
+}
+
+/*Botones*/
+.btn{
+    display: block;
+    text-align: center;
+    padding: 0.5rem 2rem;
+    margin: 2rem 0;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    flex: 0 0 100%;
+}
+.btn:hover{
+    cursor: pointer;
+}
+@media (min-width: 768px) {
+    .btn{
+        display: inline-block;
+        flex: 0 0 auto;
+    }
+}
+/*Este media query hara que los botones de entradas ocupen toda la 
+pantalla en dispositivos pequeños y una parte solo de la 
+pantalla en dispositivos grandes.*/
+
+.btn-primario{
+    background-color: #000000;
+}
+.btn-secundario{
+    background-color: #784d3c;
+}
+
 
 /*Header*/
 @media (min-width:768px) {
@@ -81,6 +146,8 @@ img {
     text-align: center;
     display: block;
     font-size: 1.8rem;
+    color: #ffffff;
+    text-decoration: none;
 }
 @media (min-width: 768px) {
     .navegacion a {
@@ -134,5 +201,108 @@ img {
     .cursos {
         flex-basis: calc(33.4% - 4rem);
     }
+}
+
+/*Opcional
+.entrada-blog {
+    display: flex;
+    justify-content: space-between;
+}
+.entrada-blog .imagen {
+    flex: 0 0 40%;
+}
+.entrada-blog .contenido-blog {
+    flex: 0 0 calc(60% - 2rem);
+}
+El codigo de arriba hara que las imgenes esten a la izquierda
+y el texto a la derecha, con un margin de 2 rem.
+*/
+
+.entrada-blog {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #e1e1e1;
+}
+.entrada-blog:last-of-type {
+    border: none;
+}
+/*Este codigo conservará las imagenes grandes y el texto debajo
+de ellas, dandole separación debajo de ellas, menos en la ultima.*/
+
+
+/*Cursos Sidebar*/
+.cursos-lista{
+    padding: 0;
+    list-style: none;
+}
+.curso{
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid #e1e1e1;
+}
+.cursos:last-of-type{
+    border-bottom: none;
+}
+.curso p{
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+.curso p span,
+.curso p.descripcion{
+    /*Si pusieramos solo .descripcion no se aplicaria el 400, ya
+    que el .curso p de ariba es mas pesado y se aplica el 700, es una regla
+    de css. Para ello tendremos que ser mas especificos y 
+    ponerlo de la manera que esta ahora y asi si se aplicara.*/
+    font-weight: 400;
+}
+
+/*Footer*/
+.site-footer{
+    background-color: #000000;
+    padding: 3rem;
+    margin-top: 4rem;
+}
+.site-footer p{
+    color: #ffffff;
+    font-size: 3rem;
+    font-weight: 400;
+    font-family: 'PT Sans', sans-serif;
+    text-align: center;
+}
+.site-footer p span{
+    font-weight: 700;
+}
+
+/*Contacto*/
+.formulario-contacto{
+    background-color: #ffffff;
+    padding: 5rem;
+}
+
+@media (min-width: 768px) {
+    .formulario-contacto{
+        margin-top: -6rem;  
+    }
+}
+.formulario-contacto .campo{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.formulario-contacto .campo label{
+    flex: 0 0 8rem;
+}
+.formulario-contacto .campo input:not([type="submit"]),
+.formulario-contacto textarea {
+    flex: 1;
+    border: 2px solid #e1e1e1;
+    padding: 1rem;
+}
+.formulario-contacto textarea{
+    height: 15rem;
+}
+.formulario-contacto .enviar {
+    display: flex;
+    justify-content: flex-end;
 }
 
